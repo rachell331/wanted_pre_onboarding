@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-export const theme = {
+const theme = {
   mainColor: '#3366ff',
   fontColor: '#333333',
   borderColor: '#d1d11d',
@@ -31,3 +31,5 @@ export const theme = {
     transform: translate(-50%, -50%);
   `,
 };
+
+export default theme;
