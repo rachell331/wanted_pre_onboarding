@@ -1,3 +1,5 @@
+import { css } from 'styled-components';
+
 export const theme = {
   mainColor: '#3366ff',
   fontColor: '#333333',
