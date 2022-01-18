@@ -7,86 +7,101 @@
 ## 1. Settings
 1. install
 
-```jsx
-yarn create react-app my-app --template typescript
+```
+yarn create react-app wanted-pre-onboarding
 ```
 
-2. `tsconfig.json`
+2. Router
+
+```
+yarn add react-router-dom
+```
+
+3. styled-components
+
+```
+yarn add styled-components
+```
+
+4. prettier & eslint-plugin install
+
+```
+yarn add prettier eslint-config-prettier eslint-plugin-prettier
+```
+
+5. `.eslintrc.json`
 
 ```
 {
-  "compilerOptions": {
-    "target": "es2016",
-    "jsx": "react-jsx",
-    "noImplicitAny": true,
-    "module": "esnext",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true,
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true
+  "extends": ["react-app", "plugin:prettier/recommended"],
+  "rules": {
+    "no-var": "warn",
+    "no-multiple-empty-lines": "warn",
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "eqeqeq": "warn",
+    "dot-notation": "warn",
+    "no-unused-vars": "warn",
+    "react/destructuring-assignment": "warn",
+    "react/jsx-pascal-case": "warn",
+    "react/no-direct-mutation-state": "warn",
+    "react/jsx-no-useless-fragment": "warn",
+    "react/no-unused-state": "warn",
+    "react/jsx-key": "warn",
+    "react/self-closing-comp": "warn",
+    "react/jsx-curly-brace-presence": "warn",
+    "prettier/prettier": [
+      "error",
+      {},
+      {
+        "usePrettierrc": false
+      }
+    ]
   },
-  "include": ["src"]
 }
 ```
 
-3. `.eslintrc.json`
+6. `prettierrc.json`
 
-```jsx
+```
 {
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  },
-  "env": {
-    "node": true
-  },
-  "extends": [
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    //"prettier/@typescript-eslint" 
-//prettier/@typescript-eslint has been removed in eslint-config-prettier v8.0.0.
-  ]
+  "tabWidth": 2,
+  "endOfLine": "lf",
+	"arrowParens": "avoid",
+	"singleQuote": true,
 }
 ```
 
-4. `.vscode/setting.json`
+7. `.vscode/setting.json`
 
-```jsx
+```
 {
-  "eslint.validate": [
-    { "language": "typescript", "autoFix": true },
-    { "language": "typescriptreact", "autoFix": true }
-  ],
-  "javascript.format.enable": false,
-  "typescript.format.enable": false
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.tabSize": 2,
+  "editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  },
+	"javascript.format.enable": false,
+	"eslint.alwaysShowStatus": true,
+	"files.autoSave": "onFocusChange"
 }
 ```
 
-5. `.gitignore`
+8. `.gitignore`
 
-```jsx
+```
 .eslintcache
 .vscode
 .eslintrc
 .prettierrc
 ```
 
-6. Others install
+9. Others install
 
-```jsx
-yarn add react-router-dom @types/react-router-dom  //router
-yarn add styled-components @types/styled-components //style components
-yarn add styled-reset // reset style install
 ```
-<br />
+yarn add styled-reset // reset style install
+yarn add react-icons // to use icons
+```
 
 ## 2. Directory Structure
 ```
@@ -104,34 +119,16 @@ yarn add styled-reset // reset style install
 ```
 
 ## 3. Features
-- User Report Chart 
-- PassengerList InfiniteScroll
+- Navigation Bar
+- Main Slider
 
 ### 3-1. Common
-- Select Types using Interface & Generic
-- Create common style attributes using GlabalStyle, Themeprovieder
 - Using Navigation Common Component
 
-### 3-2. Chart
-- Data Fetching with **Axios**
+### 3-2. Main
+- Data Fetching with **Mockup Data in Array**
 - 📎 **Line Chart**
-  - Calculate slope using **Math.tan, Math.cos**
-  - Calculate position & width using **calc** & attributes transferred to the **props**.
-- 📎 **Bar Chart**
-  - Get maximum vale of array : using **apply()**
-  - Calculate the ratio by dividing the elements in each array by the maximum value.
-  - Each Diagram Bar : [Total height * ratio]
-
-### 3-3. InfiniteScroll
-- When the user's scroll touches the floor, add data.
-- 📎 **moreFetchData function**
-  - Get additional data when scrolling.
-- 📎 **infiniteScroll function**
-  - Reuse the funcion **useCallback**
-  - Using **scrollTop, scrollHeight, clientHeight** : When `scrollTop+scrollHeight >= clientHeight` Callback function execution.
-- 📎 **getFetchData function**
-  - Insert data that is called **useEffect()**
-  - Save data received through **axios** in the `result` variable, increase by pageNumber + 1
+  - 
 
 ## 4. Build
 ```jsx
