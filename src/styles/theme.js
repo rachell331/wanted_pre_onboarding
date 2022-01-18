@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 const theme = {
   mainColor: '#3366ff',
   fontColor: '#333333',
-  borderColor: '#d1d11d',
+  borderColor: '#d1d1d1',
   bgColor: '#ffffff',
 
   flexcenter: css`
