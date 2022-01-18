@@ -139,3 +139,13 @@ yarn build
 ```
 ❇️ netlify continuous deployment
 
+## 5. Git-Issue
+branch name `master` to `main
+master ↔️ main
+```
+1. git add .
+2. git commit -m “Add: Initial settings completed”
+3. git branch -M main
+4. git remote add origin “repository url”
+5. git push origin main -f / git push -u origin main
+```
