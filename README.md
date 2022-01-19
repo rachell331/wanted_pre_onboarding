@@ -126,9 +126,8 @@ yarn add react-icons // to use icons
 - Using Navigation Common Component
 
 ### 3-2. Main
-- Data Fetching with **Mockup Data in Array**
-- 📎 **Line Chart**
-  - 
+- Data Fetching with **Constant Data in Array**
+
 
 ## 4. Build
 ```jsx
